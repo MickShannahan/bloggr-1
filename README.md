@@ -27,16 +27,18 @@ You may wish to refresh your self on a few things available to you from the bcw 
 
 You will need to fullfill the following user stories:
 
-- "As a user, I need to see all the blogs on the `home page`, so that I do not have to log in to see all the blogs"
-- "As a user, I need a to login to see my `profile page`, so that I can see all of my blogs"
-- "As a user, I need a way to create, edit and delete blogs, so that I can easily create content to share with others"
-- "As a user, I need to be able to create, edit and delete comments to blogs, so that I can provide feedback to other writers on their blog"
+- "As a user, I can see all the blogs on the `home page`, so that I do not have to log in to see all the blogs"
+- "As a user, I can click on a blog to be taken to the `blog page`, so that I can read the contents of the blog and its comments"
+- "As a user, I can login to see my `profile page`, so that I can see all of my blogs"
+- "As a user, I can create, edit and delete blogs, so that I can easily create content to share with others"
+- "As a user, I can create, edit and delete comments on the `blog page`, so that I can provide feedback to other writers on their blog"
 
 These user stories can be implemented as a stretch goals
 
 - "As a user, I can save a blog as a draft, so that I can save it without having it published right away"
 - "As a user, I need to be able to search all blogs by a certain author, so that I can filter down the blogs to only what they have created"
 - "As a user, my profile can also show a list of all my comments, with a link to the blog that I had commented on"
+- "As a user, I can tag blogs, so that I can search for them via query parameters and filter down blogs"
 
 ### Step 3
 
@@ -44,16 +46,16 @@ Once you have the appropriate functionality, add a theme the site in whatever wa
 
 ## Requirements:
 
+#### Visualization
+
+- [ ] `Home page` displays all published blogs (response from a standard get request)
+- [ ] Blogs on the `home page` are listed as title and author
+- [ ] Clicking the link users are taken to a `blog page`
+- [ ] Refreshing while on the `blog page` does not renavigate the user, and the blog still shows its contents
+- [ ] The `blog page` shows all comments for that blog
+
 #### Functionality
 
 - [ ] Users Can Register, Login, and Logout (this should work out of the box, don't break it)
-- [ ] Blogs can be retrieved by All or by Id
-- [ ] Once logged in Users can Create Edit and Delete blogs
-- [ ] Users can retrieve all the comments for a blog
 - [ ] Once logged in Users can Create Edit and Delete comments
 - [ ] Users can only modify/delete data they created
-- [ ] All data returns with its creators name
-
-### Have fun!
-
-There are a lot of extended challenges and features that can be added to your blog engine. The Blog Company expects this feature set, but they encourage creativity! Some challenges could be allowing adding tags to a blog to increase searchablity. Upvoting or downvoting a blog. Retrieving most popular blog by the number of upvotes. You can use both our front end testing tool, and postman to test your server.

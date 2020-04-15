@@ -1,8 +1,22 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" :to="{ name: 'Home' }"
-      >AppName</router-link
-    >
+    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+      <div class="d-flex flex-column align-items-center">
+        <img
+          alt="Vue logo"
+          src="../assets/logo.png"
+          style="transform: rotate(-90deg);width: 25px;"
+        />
+        <img
+          alt="Vue logo"
+          src="../assets/logo.png"
+          style="transform: rotate(-90deg);width: 25px;margin-top: -10px;"
+        />
+      </div>
+      <div>
+        <h3 style="color: green">loggr</h3>
+      </div>
+    </router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -47,7 +61,7 @@
 
 <script>
 import { getUserData } from "@bcwdev/auth0-vue";
-import { setBearer } from "../store/AxiosStore";
+import { setBearer, api } from "../store/AxiosStore";
 export default {
   name: "Navbar",
   methods: {
@@ -55,7 +69,7 @@ export default {
       await this.$auth.loginWithPopup();
       if (this.$auth.isAuthenticated) {
         setBearer(this.$auth.bearer);
-        //NOTE if you want to do something everytime the user logs in, do so here
+        // NOTE if you want to do something everytime the user logs in, do so here
       }
       this.$store.dispatch("getProfile");
     },
