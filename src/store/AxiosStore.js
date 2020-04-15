@@ -1,11 +1,6 @@
 import Axios from "axios";
-
-let baseUrl = location.host.includes("localhost")
-  ? "https://localhost:5001/"
-  : "/";
-
 export const api = Axios.create({
-  baseURL: baseUrl + "api/",
+  baseURL: "https://cw-bloggr.herokuapp.com/api/",
   timeout: 3000,
   withCredentials: true,
 });
