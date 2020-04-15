@@ -1,0 +1,28 @@
+<template>
+  <div id="app">
+    <navbar />
+    <router-view />
+  </div>
+</template>
+
+<script>
+import Navbar from "@/components/navbar";
+import { onAuth } from "@bcwdev/auth0-vue";
+import { setBearer } from "./store/AxiosStore";
+export default {
+  name: "App",
+  async beforeCreate() {
+    await onAuth();
+    if (this.$auth.isAuthenticated) {
+      setBearer(this.$auth.bearer);
+      //NOTE if you want to do something everytime the user logs in, do so here
+      this.$store.dispatch("getProfile");
+    }
+  },
+  components: {
+    Navbar,
+  },
+};
+</script>
+
+<style></style>
