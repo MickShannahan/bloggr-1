@@ -2,7 +2,7 @@
 
 ![](https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 
-You have been hired to complete the front-end of Bloggr, a bloging website built by The Blog Company! They have already hired out to have an API built and that has been deployed to https://cw-bloggr.herokuapp.com/ which also holds the documentation for using that API. Your job is to make a beautiful client that will function in a way they anticipate
+You have been hired to complete the front-end of Bloggr, a blogging website built by The Blog Company! They have already hired out to have an API built and that has been deployed to https://cw-bloggr.herokuapp.com/ which also holds the documentation for using that API. Your job is to make a beautiful client that will function in a way they anticipate.
 
 ## Goals:
 
@@ -10,7 +10,7 @@ In this checkpoint students will create a client interface that utilizes a blog 
 
 ## The Setup
 
-This project consists solely of the client side of the application. The back-end (server) will be handled for you. However, you must write your client to accommodate this functionality on the front-end. The `bcw-create > other > bloggr` should get all your authentication setup done for you as well as providing you the authentication navbar which allows login/logout and authentication persistency. From there the rest of the coding is up to you.
+This project consists solely of the client side of the application. The back-end (server) will be handled for you. However, you must write your client to accommodate this functionality on the front-end. The `bcw-create > other > bloggr` should get all your authentication setup done for you as well as providing you the authentication navbar which allows login/logout and authentication persistence. From there the rest of the coding is up to you.
 
 ### Step 1
 
@@ -18,14 +18,14 @@ Review the API documentation provided in the link above you will find that there
 
 Your auth should be setup for you, so you DO NOT need to change anything to make login/logout/authenticate work.
 
-You may wish to refresh your self on a few things available to you from the bcw auth setup. Within a vue component you have a few peices of information regarding the users authentication.
+You may wish to refresh your self on a few things available to you from the bcw auth setup. Within a vue component you have a few pieces of information regarding the users authentication.
 
 > `this.$auth.isAuthenticated` returns a bool as to whether or not the user is logged in \
 > `this.$auth.userInfo` if logged in this will provide you with the information that is made public from their login, this includes things like email, name and avatar
 
 ### Step 2
 
-You will need to fullfill the following user stories:
+You will need to fulfill the following user stories:
 
 - "As a user, I can see all the blogs on the `home page`, so that I do not have to log in to see all the blogs"
 - "As a user, I can click on a blog to be taken to the `blog page`, so that I can read the contents of the blog and its comments"
