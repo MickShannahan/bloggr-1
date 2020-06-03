@@ -60,3 +60,57 @@ Once you have the appropriate functionality, add a theme the site in whatever wa
 - [ ] Once logged in Users can Create Edit and Delete Blogs
 - [ ] Once logged in Users can Create Edit and Delete Comments
 - [ ] Users can only modify/delete data they created
+
+
+### API Routes
+
+#### Profile: _"api/profile"_
+
+Schema:
+
+```javascript
+    subs: [{ type: String, unique: true }]
+    email: { type: String, lowercase: true, unique: true }
+    name: { type: String, required: true }
+    picture: { type: String }
+```
+
+- GET: '/' returns users profile, creates one if it does not exist\*
+- GET: '/blogs' returns logged in users Blogs\*\*
+- GET: '/comments' returns logged in users Comments\*\*
+- PUT: '/' Allows user to edit their own profile\*\*
+
+#### Blog _"api/blogs"_
+
+Schema:
+
+```javascript
+  title: { type: String, required: true }
+  body: { type: String, required: true }
+  published: { type: Boolean, default: true }
+  creatorEmail: { type: String, required: true }
+```
+
+- GET: '/' Returns all pubished blogs \*\*\*
+- GET: '/:id' Returns blog by Id and its comments
+- POST: '/' Create new Blog \*
+- PUT: '/:id' Edits Blog \*\*
+- DELETE: '/:id' Deletes Blog \*\*
+
+#### Comments _"api/comments"_
+
+```javascript
+  body: { type: String, required: true }
+  blogId: { type: ObjectId, ref: "Blog", required: true }
+  creatorEmail: { type: String, required: true }
+```
+
+- POST: '/' Create new Comment \*
+- PUT: '/:id' Edits Comment \*\*
+- DELETE: '/:id' Deletes Comment \*\*
+
+> \* _requires user login_ \
+> \*\* _requires login and ownership of data_ \
+> \*\*\* _accepts query parameter "creatorEmail" and filters for that creator_
+
+deployed to: https://cw-bloggr.herokuapp.com/
