@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <navbar />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar'
+import { onAuth } from '@bcwdev/auth0-vue'
+import { api } from './services/AxiosService'
+import { profileService } from './services/ProfileService'
 
 export default {
   name: 'App',
+  async beforeCreate() {
+    try {
+      await onAuth()
+      if (this.$auth.bearer) {
+        api.defaults.headers.authorization = this.$auth.bearer
+        await profileService.getProfile()
+      }
+    } catch (err) {
+      console.error(err)
+      this.$router.push({ name: 'home' })
+    }
+  },
   components: {
-    HelloWorld
+    Navbar
   }
 }
 </script>
-
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/_variables.scss";
+@import "bootstrap";
+@import "./assets/_overrides.scss";
 </style>
