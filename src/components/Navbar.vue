@@ -31,37 +31,38 @@
         </li>
         <li
           class="nav-item"
-          v-if="$auth.isAuthenticated"
+          v-if="user.isAuthenticated"
           :class="{ active: $route.name == 'Profile' }"
         >
           <router-link class="nav-link" :to="{ name: 'Profile' }">Profile</router-link>
         </li>
       </ul>
       <span class="navbar-text">
-        <button class="btn btn-success" @click="login" v-if="!$auth.isAuthenticated">Login</button>
+        <button class="btn btn-success" @click="login" v-if="!user.isAuthenticated">Login</button>
         <button class="btn btn-danger" @click="logout" v-else>logout</button>
       </span>
     </div>
+    {{user}}
   </nav>
 </template>
 
 <script>
 import { profileService } from '../services/ProfileService'
 import { api } from '../services/AxiosService'
+import { $auth } from '@bcwdev/auth0-vue'
+import { AppState } from '../AppState'
+import { computed } from 'vue'
 
 export default {
   name: 'Navbar',
   setup() {
     return {
+      user: computed(() => AppState.user),
       async login() {
-        await this.$auth.loginWithPopup()
-        if (this.$auth.bearer) {
-          api.defaults.headers.authorization = this.$auth.bearer
-          profileService.getProfile()
-        }
+        $auth().loginWithPopup()
       },
       async logout() {
-        await this.$auth.logout({ returnTo: window.location.origin })
+        await $auth().logout({ returnTo: window.location.origin })
       }
     }
   }
