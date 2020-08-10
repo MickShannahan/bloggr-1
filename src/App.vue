@@ -7,7 +7,6 @@
 
 <script>
 import Navbar from './components/Navbar'
-import { onAuthLoaded, $auth } from '@bcwdev/auth0-vue'
 import { api } from './services/AxiosService'
 import { profileService } from './services/ProfileService'
 
