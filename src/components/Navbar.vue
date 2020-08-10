@@ -62,7 +62,7 @@
 <script>
 import { profileService } from '../services/ProfileService'
 import { api } from '../services/AxiosService'
-import { $auth } from '@bcwdev/auth0-vue'
+import { AuthService } from '../AuthConfig'
 import { AppState } from '../AppState'
 import { computed, reactive } from 'vue'
 
@@ -77,10 +77,10 @@ export default {
       state,
       user: computed(() => AppState.user),
       async login() {
-        $auth().loginWithPopup()
+        AuthService.loginWithPopup()
       },
       async logout() {
-        await $auth().logout({ returnTo: window.location.origin })
+        await AuthService.logout({ returnTo: window.location.origin })
       }
     }
   }
@@ -97,6 +97,7 @@ export default {
 .dropdown-menu.show {
   transform: scale(1);
 }
+
 .hoverable {
   cursor: pointer;
 }

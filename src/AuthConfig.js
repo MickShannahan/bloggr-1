@@ -9,7 +9,7 @@ const domain = 'codeworksclassroom.auth0.com'
 const clientId = 'pOXw2OGv1LsYi7LEBmDF04RLkXQvldml'
 const audience = 'https://codeworksclassroom.com'
 
-const AuthService = initializeAuth({
+export const AuthService = initializeAuth({
   domain,
   clientId,
   audience,
