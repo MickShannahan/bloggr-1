@@ -7,8 +7,6 @@
 
 <script>
 import Navbar from './components/Navbar'
-import { api } from './services/AxiosService'
-import { profileService } from './services/ProfileService'
 
 export default {
   name: 'App',
