@@ -8,7 +8,7 @@
 <script>
 import Navbar from "@/components/navbar";
 import { onAuth } from "@bcwdev/auth0-vue";
-import { setBearer, api } from "./store/AxiosStore";
+import { setBearer } from "./services/AxiosService";
 export default {
   name: "App",
   async beforeCreate() {

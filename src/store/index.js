@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import router from "../router";
-import { api } from "./AxiosStore";
+import { api } from "../services/AxiosService.js";
 
 Vue.use(Vuex);
 
@@ -15,12 +15,6 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    setBearer({}, bearer) {
-      api.defaults.headers.authorization = bearer;
-    },
-    resetBearer() {
-      api.defaults.headers.authorization = "";
-    },
     async getProfile({ commit }) {
       try {
         let res = await api.get("profile");
