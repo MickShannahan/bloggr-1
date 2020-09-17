@@ -101,7 +101,7 @@ Schema:
 
 ```javascript
   body: { type: String, required: true }
-  blogId: { type: ObjectId, ref: "Blog", required: true }
+  blog: { type: ObjectId, ref: "Blog", required: true }
   creatorEmail: { type: String, required: true }
 ```
 
