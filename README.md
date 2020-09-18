@@ -92,7 +92,8 @@ Schema:
 ```
 
 - GET: '/' Returns all pubished blogs \*\*\*
-- GET: '/:id' Returns blog by Id and its comments
+- GET: '/:id' Returns blog by Id
+- GET: '/:id/comments" Returns comments for a blog
 - POST: '/' Create new Blog \*
 - PUT: '/:id' Edits Blog \*\*
 - DELETE: '/:id' Deletes Blog \*\*
