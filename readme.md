@@ -44,17 +44,6 @@ These user stories can be implemented as a stretch goals
 
 Once you have the appropriate functionality, add a theme the site in whatever way you see fit. What types of blogs are on your page? Food-blogs, Gaming blogs, Fitness blogs, add some css and flair to increase the look of your page from a simple blog engine to something that reflects your interests.
 
-## Requirements:
-
-- [ ] `Home page` displays all published blogs (response from a standard get request)
-- [ ] Blogs on the `home page` are listed as title and author
-- [ ] Clicking the link users are taken to a `blog page`
-- [ ] Refreshing while on the `blog page` does not renavigate the user, and the blog still shows its contents
-- [ ] The `blog page` shows all comments for that blog
-- [ ] Users Can Register, Login, and Logout (this should work out of the box, don't break it)
-- [ ] Once logged in Users can Create Edit and Delete Blogs
-- [ ] Once logged in Users can Create Edit and Delete Comments
-- [ ] Users can only modify/delete data they created
 
 
 ### API Routes
