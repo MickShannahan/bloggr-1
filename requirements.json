@@ -1,4 +1,4 @@
-{ 'requirements' : 
+{ "requirements" : 
 ["`Home page` displays all published blogs (response from a standard get request)",
 "Blogs on the `home page` are listed as title and author",
 "Clicking the link users are taken to a `blog page`",
@@ -8,4 +8,5 @@
 "Once logged in Users can Create Edit and Delete Blogs",
 "Once logged in Users can Create Edit and Delete Comments",
 "Users can only modify/delete data they created"
-]}
+],
+"stretchGoals":[]}
